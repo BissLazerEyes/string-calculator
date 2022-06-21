@@ -88,7 +88,7 @@ public class Main {
             return result;
         }
 
-        // Объявление операторов
+        // Лямбла выражения (заданные значения в кейсах переходят в операции)
         private Operation parseOperation(String string) {
             return switch (string) {
                 case "+" -> Operation.PLUS;
@@ -132,7 +132,7 @@ public class Main {
         public static String calculate(String string) {
             Parser parser = new Parser(string);
 
-            // Использование лямбда выражения для отсылания значений в другую часть кода (в нашем случае это методы для операций)
+            // Лямбда выражения (заданные операторы в кейсах переходят в методы)
             String result =  switch (parser.getOperation()) {
                 case PLUS -> plus(parser);
                 case MINUS -> minus(parser);
